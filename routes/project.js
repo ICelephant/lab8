@@ -1,12 +1,14 @@
 var projects = require('../projects.json')['projects'];
 
 exports.projectInfo = function(req, res) { 
+	var grid;
 	var projectID = req.params.id;
 	var project = getProjectData(projectID);
   	res.json(project);
 }
 
 exports.view = function(req, res) {
+	var grid;
 	var projectID = req.params.id;
 	var project = getProjectData(projectID);
 	res.render('project', project);
